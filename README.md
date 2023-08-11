@@ -98,3 +98,22 @@ From time to time, you’ve got to manipulate DOM elements in HTML. Because Angu
 ``` typescript
 @ViewChild("winnerResult") winnerResult: WinnerResultComponent;
 ```
+
+
+
+
+Topic:
+
+1. Control container with nested form manipulate. -> conclusion.
+
+2. Ngtemplate ngcontainer directive way of use. -> conclusion.
+
+3. Separate component transfer data.
+
+3. Observable.
+
+- Only access you dom manapilate by vanila javascript.
+
+3. Extra -> go through exercise.
+
+4. Jest test.
