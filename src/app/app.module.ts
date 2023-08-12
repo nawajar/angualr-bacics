@@ -9,6 +9,8 @@ import { ParentComponent } from './control-container/parent/parent.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ChildComponent } from './control-container/child/child.component';
 import { TemplateComponent } from './template/template.component';
+import { NestedCompComponent } from './nested-comp/nested-comp.component';
+import { ChildCompComponent } from './nested-comp/child-comp/child-comp.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,6 +19,8 @@ import { TemplateComponent } from './template/template.component';
     ParentComponent,
     ChildComponent,
     TemplateComponent,
+    NestedCompComponent,
+    ChildCompComponent,
   ],
   imports: [
     BrowserModule,
