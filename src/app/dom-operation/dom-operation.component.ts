@@ -30,4 +30,8 @@ export class DomOperationComponent implements OnInit, AfterViewInit {
     });
     console.log('afterViewInit ' + element);
   }
+
+  decrease(): void {
+    this.counter -= 1;
+  }
 }
