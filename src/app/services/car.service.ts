@@ -1,11 +1,10 @@
 import { Injectable } from '@angular/core';
 import { CarModel } from '../model/car-model';
-import { of } from 'rxjs';
+import { map, of } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
 export class CarService {
-
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   constructor() {}
 
@@ -23,8 +22,12 @@ export class CarService {
       {
         name: 'CAR B',
         model: 'B',
-        sn: undefined
+        sn: undefined,
       },
-    ]);
+    ]).pipe(
+      map((value) => {
+        return value.map((value) => value);
+      })
+    );
   }
 }
