@@ -139,18 +139,3 @@ The ng-container allows us to use structural directives without any extra elemen
 
 When child component receive data from parent though @Input beware reference object change  angular lifecycle is not detected.
 
-Topic:
-
-1. Control container with nested form manipulate. -> conclusion.
-
-2. Ngtemplate ngcontainer directive way of use. -> conclusion.
-
-3. Separate component transfer data.
-
-4. Observable.
-
-- Only access you dom manapilate by vanila javascript.
-
-3. Extra -> go through exercise.
-
-4. Jest test.
