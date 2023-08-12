@@ -54,16 +54,6 @@ export class CalendarComponent implements OnInit {
         day: i,
       });
     }
-    console.log(
-      this.startDayInWeek,
-      this.currentDay,
-      'm ',
-      this.currentMonth,
-      'y ',
-      this.currentYear,
-      'day in month',
-      this.daysInMonth(this.currentMonth, this.currentYear)
-    );
   }
 
   clearDay(): void {
