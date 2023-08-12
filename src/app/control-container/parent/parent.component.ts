@@ -3,7 +3,6 @@ import {
   FormBuilder,
   FormGroup,
   Validators,
-  FormControl,
 } from '@angular/forms';
 
 @Component({
@@ -20,9 +19,9 @@ export class ParentComponent {
       lastName: '',
       address: this.fb.group({
         street: ['', Validators.required],
-        city: ['', Validators.required],
-        state: ['', Validators.required],
-        zip: ['', Validators.required],
+        city: [''],
+        state: [''],
+        zip: [''],
       }),
     });
   }
