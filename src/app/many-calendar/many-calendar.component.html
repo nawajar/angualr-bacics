@@ -54,16 +54,18 @@
     <span>Calendar B</span>
     <app-calendar [contentsTemplate]="calendarB">
       <ng-template #calendarB let-instance="instance">
-        <div class="bg-green-300 w-full p-4">
+        <div class="bg-green-300 w-full p-4 rounded">
           <div class="w-full flex items-center justify-between">
-            <div class="flex items-center">
+            <div class="flex items-center gap-1">
               <button
                 class="bg-white rounded p-1"
                 (click)="instance.prevMonth()"
               >
                 <
               </button>
-              <div class="font-bold">{{ instance.month }}</div>
+              <div class="font-bold text-white">
+                {{ transformMonth(instance.month) }}
+              </div>
               <button
                 class="bg-white rounded p-1"
                 (click)="instance.nextMonth()"
@@ -71,9 +73,9 @@
                 >
               </button>
             </div>
-            <div class="flex items-center">
+            <div class="flex items-center gap-1">
               <button class="bg-white rounded p-1"><</button>
-              <div class="font-bold">{{ instance.year }}</div>
+              <div class="font-bold text-white">{{ instance.year }}</div>
               <button
                 class="bg-white rounded p-1"
                 (click)="instance.nextMonth()"
