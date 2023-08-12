@@ -14,11 +14,16 @@ export class CarService {
       {
         name: 'CAR A',
         model: 'A',
-        sn: '',
+        sn: 'A10',
       },
       {
         name: 'CAR B',
         model: 'B',
+      },
+      {
+        name: 'CAR B',
+        model: 'B',
+        sn: undefined
       },
     ]);
   }

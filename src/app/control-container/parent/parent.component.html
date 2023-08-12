@@ -1,0 +1,21 @@
+<form [formGroup]="form" class="w-full flex flex-col gap-2">
+  <div class="form-group">
+    <label for="name">First Name</label>
+    <span
+      class="error"
+      *ngIf="
+        form.controls['firstName'].touched && form.controls['firstName']?.errors?.['required']
+      "
+      >required field</span
+    >
+    <input name="first_name" formControlName="firstName" />
+  </div>
+  <div class="form-group">
+    <label for="name">Last Name</label>
+    <input name="last_name" formControlName="lastName" />
+  </div>
+  <app-child formGroupName="address"></app-child>
+  <div class="w-full">
+    <button class="bg-green-400 rounded" (click)="submitForm()">Submit</button>
+  </div>
+</form>

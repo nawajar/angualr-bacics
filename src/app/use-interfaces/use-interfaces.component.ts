@@ -10,7 +10,6 @@ import { CarService } from 'src/app/services/car.service';
 export class UseInterfacesComponent implements OnInit {
   cars: CarModel[] | undefined;
 
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
   constructor(private carService: CarService) {}
 
   ngOnInit(): void {

@@ -100,6 +100,22 @@ From time to time, you’ve got to manipulate DOM elements in HTML. Because Angu
 ```
 
 
+## Use getComponent to inspect component state
+
+Angular provide ng get component to return instance of component with dom.
+
+```
+ ng.getComponent($0)
+```
+
+## Control container
+
+The ControlContainer is a base class for form directives that contain multiple registered instances of NgControl. We can use the ControlContainer to access FormControls, FormGroups, and FormArrays and manage a main form chunked across components.
+
+```
+ constructor(public controlContainer:ControlContainer) {
+  }
+```
 
 
 Topic:
