@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CarModel } from 'src/app/model/car-model';
 import { CarService } from 'src/app/services/car.service';
-
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 @Component({
   selector: 'app-use-interfaces',
   templateUrl: './use-interfaces.component.html',
@@ -17,8 +17,11 @@ export class UseInterfacesComponent implements OnInit {
   }
 
   getCar(): void {
-    this.carService.getCar().subscribe((res) => {
-      this.cars = res;
-    });
+    this.carService
+      .getCar()
+      .pipe(takeUntilDestroyed())
+      .subscribe((res) => {
+        this.cars = res;
+      });
   }
 }

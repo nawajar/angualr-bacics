@@ -86,13 +86,13 @@
           </div>
           <div class="w-full grid grid-cols-7 rounded">
             <div
-              class="w-[30px] text-center font-bold"
+              class="w-[30px] h-[30px] cursor-pointer rounded text-center font-bold"
               *ngFor="let label of instance.daysLabel"
             >
               {{ label }}
             </div>
             <div
-              class="w-[30px] text-center font-bold"
+              class="w-[30px] h-[30px] cursor-pointer rounded text-center font-bold hover:bg-white"
               *ngFor="let d of instance.days"
             >
               {{ d.day }}

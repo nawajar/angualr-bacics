@@ -21,7 +21,6 @@ export class CalendarComponent implements OnInit {
   contentsTemplate: TemplateRef<unknown>;
 
   calendarInstance: Calendar;
-
   today = new Date();
   currentDay = this.today.getDate();
   currentMonth = this.today.getMonth();
@@ -30,6 +29,11 @@ export class CalendarComponent implements OnInit {
   startDayInWeek = new Date(this.currentYear, this.currentMonth, 1).getDay();
 
   ngOnInit(): void {
+    this.initCalendarInstance();
+    this.initCalendar();
+  }
+
+  initCalendarInstance(): void {
     this.calendarInstance = {
       days: [],
       daysLabel: ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'],
@@ -38,22 +42,17 @@ export class CalendarComponent implements OnInit {
       nextMonth: () => this.nextMonth(),
       prevMonth: () => this.prevMonth(),
     };
-    this.initCalendar();
   }
 
   initCalendar(): void {
     const daysInMonth = this.daysInMonth(this.currentMonth, this.currentYear);
-
-    for (let i = 1; i <= this.startDayInWeek; i++) {
-      this.calendarInstance.days.push({
-        day: null,
-      });
-    }
-    for (let i = 1; i <= daysInMonth; i++) {
-      this.calendarInstance.days.push({
-        day: i,
-      });
-    }
+    const prevMonth = Array.from({ length: this.startDayInWeek }, () => {
+      return { day: null };
+    });
+    const thisMonth = Array.from({ length: daysInMonth }, (_, i) => {
+      return { day: i + 1 };
+    });
+    this.calendarInstance.days.push(...prevMonth, ...thisMonth);
   }
 
   clearDay(): void {
