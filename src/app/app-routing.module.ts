@@ -5,6 +5,7 @@ import { DomOperationComponent } from './dom-operation/dom-operation.component';
 import { ParentComponent } from './control-container/parent/parent.component';
 import { TemplateComponent } from './template/template.component';
 import { NestedCompComponent } from './nested-comp/nested-comp.component';
+import { ManyCalendarComponent } from './many-calendar/many-calendar.component';
 
 const routes: Routes = [
   { path: 'use-interfaces', component: UseInterfacesComponent },
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'control-container', component: ParentComponent },
   { path: 'template', component: TemplateComponent },
   { path: 'nested-comp', component: NestedCompComponent },
+  { path: 'many-calendar', component: ManyCalendarComponent },
 ];
 
 @NgModule({

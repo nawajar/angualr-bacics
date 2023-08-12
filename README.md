@@ -118,7 +118,7 @@ The ControlContainer is a base class for form directives that contain multiple r
 ```
 
 
-## Write tests
+## Write Tests
 
 Writing tests may seem like an unnecessary overhead but it’s a vital practice for all developers. Local unit tests and final automated end-to-end tests are valuable assets to detect bugs early
 
@@ -136,6 +136,8 @@ The ng-container allows us to use structural directives without any extra elemen
 ```
 
 # Nested component transfer data
+
+When child component receive data from parent though @Input beware reference object change  angular lifecycle is not detected.
 
 Topic:
 

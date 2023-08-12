@@ -1,0 +1,103 @@
+<div class="w-full flex gap-16">
+  <div>
+    <span>Calendar A</span>
+    <app-calendar [contentsTemplate]="calendarA">
+      <ng-template #calendarA let-instance="instance">
+        <div class="bg-blue-300 w-full p-4">
+          <div class="w-full flex items-center justify-between">
+            <div class="flex items-center">
+              <button
+                class="bg-gray-400 rounded p-1"
+                (click)="instance.prevMonth()"
+              >
+                Back
+              </button>
+              <div class="font-bold">{{ instance.month }}</div>
+              <button
+                class="bg-gray-400 rounded p-1"
+                (click)="instance.nextMonth()"
+              >
+                Next
+              </button>
+            </div>
+            <div class="flex items-center">
+              <button class="bg-gray-400 rounded p-1">Back</button>
+              <div class="font-bold">{{ instance.year }}</div>
+              <button
+                class="bg-gray-400 rounded p-1"
+                (click)="instance.nextMonth()"
+              >
+                Next
+              </button>
+            </div>
+          </div>
+          <div class="w-full grid grid-cols-7 rounded">
+            <div
+              class="w-[30px] text-center font-bold"
+              *ngFor="let label of instance.daysLabel"
+            >
+              {{ label }}
+            </div>
+            <div
+              class="w-[30px] text-center font-bold"
+              *ngFor="let d of instance.days"
+            >
+              {{ d.day }}
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </app-calendar>
+  </div>
+
+  <div>
+    <span>Calendar B</span>
+    <app-calendar [contentsTemplate]="calendarB">
+      <ng-template #calendarB let-instance="instance">
+        <div class="bg-green-300 w-full p-4">
+          <div class="w-full flex items-center justify-between">
+            <div class="flex items-center">
+              <button
+                class="bg-white rounded p-1"
+                (click)="instance.prevMonth()"
+              >
+                <
+              </button>
+              <div class="font-bold">{{ instance.month }}</div>
+              <button
+                class="bg-white rounded p-1"
+                (click)="instance.nextMonth()"
+              >
+                >
+              </button>
+            </div>
+            <div class="flex items-center">
+              <button class="bg-white rounded p-1"><</button>
+              <div class="font-bold">{{ instance.year }}</div>
+              <button
+                class="bg-white rounded p-1"
+                (click)="instance.nextMonth()"
+              >
+                >
+              </button>
+            </div>
+          </div>
+          <div class="w-full grid grid-cols-7 rounded">
+            <div
+              class="w-[30px] text-center font-bold"
+              *ngFor="let label of instance.daysLabel"
+            >
+              {{ label }}
+            </div>
+            <div
+              class="w-[30px] text-center font-bold"
+              *ngFor="let d of instance.days"
+            >
+              {{ d.day }}
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </app-calendar>
+  </div>
+</div>

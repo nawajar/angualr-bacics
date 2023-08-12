@@ -11,6 +11,8 @@ import { ChildComponent } from './control-container/child/child.component';
 import { TemplateComponent } from './template/template.component';
 import { NestedCompComponent } from './nested-comp/nested-comp.component';
 import { ChildCompComponent } from './nested-comp/child-comp/child-comp.component';
+import { CalendarComponent } from './calendar/calendar.component';
+import { ManyCalendarComponent } from './many-calendar/many-calendar.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,6 +23,8 @@ import { ChildCompComponent } from './nested-comp/child-comp/child-comp.componen
     TemplateComponent,
     NestedCompComponent,
     ChildCompComponent,
+    CalendarComponent,
+    ManyCalendarComponent,
   ],
   imports: [
     BrowserModule,
