@@ -104,7 +104,7 @@ From time to time, you’ve got to manipulate DOM elements in HTML. Because Angu
 
 Angular provide ng get component to return instance of component with dom.
 
-```
+``` typescript
  ng.getComponent($0)
 ```
 
@@ -118,6 +118,25 @@ The ControlContainer is a base class for form directives that contain multiple r
 ```
 
 
+## Write tests
+
+Writing tests may seem like an unnecessary overhead but it’s a vital practice for all developers. Local unit tests and final automated end-to-end tests are valuable assets to detect bugs early
+
+# Ngtemplate NgContainer
+the ng-template directive represents an Angular template: this means that the content of this tag will contain part of a template, that can be then be composed together with other templates in order to form the final component template.
+
+Angular is already using ng-template under the hood in many of the structural directives that we use all the time: ngIf, ngFor
+
+The ng-container allows us to use structural directives without any extra element, making sure that the only DOM changes being applied are those dictated by the directives themselves.
+
+``` html
+<ng-template></ng-template>
+
+<ng-container></ng-container>
+```
+
+# Nested component transfer data
+
 Topic:
 
 1. Control container with nested form manipulate. -> conclusion.
@@ -126,7 +145,7 @@ Topic:
 
 3. Separate component transfer data.
 
-3. Observable.
+4. Observable.
 
 - Only access you dom manapilate by vanila javascript.
 

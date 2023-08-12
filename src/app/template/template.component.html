@@ -1,0 +1,24 @@
+<div class="w-full">
+  <ng-template #contentsTemplate>
+    <div class="font-bold">This contents.</div>
+  </ng-template>
+  <ng-container *ngTemplateOutlet="contentsTemplate"></ng-container>
+
+  <div class="w-full bg-slate-300">
+    <ul>
+      <li *ngFor="let item of items">
+        {{ item }}
+      </li>
+    </ul>
+  </div>
+
+  <div class="w-full bg-green-300">
+    <ul>
+      <ng-container *ngFor="let item of items">
+        <li *ngIf="item">
+          {{ item }}
+        </li>
+      </ng-container>
+    </ul>
+  </div>
+</div>
