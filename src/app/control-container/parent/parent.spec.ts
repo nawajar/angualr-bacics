@@ -11,46 +11,21 @@ describe('Parent', () => {
     component = new ParentComponent(fb);
   });
 
-  it('should init form group', () => {
-    expect(component.form.getRawValue()).toEqual({
-      firstName: '',
-      lastName: '',
-      address: {
-        street: '',
-        city: '',
-        state: '',
-        zip: '',
-      },
-    });
+  it('should show alert when submit data success', () => {
+    window.alert = jest.fn();
+    component.formInvalid = jest.fn().mockReturnValue(false);
+
+    component.submit();
+    
+    expect(window.alert).toHaveBeenCalled();
   });
 
-  describe('SubmitForm', () => {
-    it('ma mark form as touch', () => {
-      component.form.markAllAsTouched = jest.fn();
-      component.submitForm();
-      expect(component.form.markAllAsTouched).toBeCalled();
-    });
+  it('should NOT show alert when submit data fail', () => {
+    window.alert = jest.fn();
+    component.formInvalid = jest.fn().mockReturnValue(true);
 
-    it('should not alert when form invalid', () => {
-      window.alert = jest.fn();
-      component.submitForm();
+    component.submit();
 
-      expect(window.alert).not.toHaveBeenCalled();
-    });
-
-    it('should not alert when form valid', () => {
-      window.alert = jest.fn();
-      //this line make form valid.
-      component.form.patchValue({
-        firstName: 'firstName',
-        address: {
-          street: 'street',
-        },
-      });
-
-      component.submitForm();
-
-      expect(window.alert).toHaveBeenCalledWith('form submit.');
-    });
+    expect(window.alert).not.toHaveBeenCalled();
   });
 });

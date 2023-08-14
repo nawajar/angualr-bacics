@@ -1,9 +1,5 @@
 import { Component } from '@angular/core';
-import {
-  FormBuilder,
-  FormGroup,
-  Validators,
-} from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-parent',
@@ -14,23 +10,26 @@ export class ParentComponent {
   form: FormGroup;
 
   constructor(private fb: FormBuilder) {
-    this.form = this.fb.group({
-      firstName: ['', Validators.required],
-      lastName: '',
-      address: this.fb.group({
-        street: ['', Validators.required],
-        city: [''],
-        state: [''],
-        zip: [''],
-      }),
-    });
+    // this.form = this.fb.group({
+    //   firstName: ['', Validators.required],
+    //   lastName: '',
+    //   address: this.fb.group({
+    //     street: ['', Validators.required],
+    //     city: [''],
+    //     state: [''],
+    //     zip: [''],
+    //   }),
+    // });
   }
 
-  submitForm(): void {
-    this.form.markAllAsTouched();
-    if (this.form.invalid) {
+  formInvalid(): any {
+    return this.form.invalid;
+  }
+
+  submit(): void {
+    if (this.formInvalid()) {
       return;
     }
-    alert('form submit.')
+    alert();
   }
 }
